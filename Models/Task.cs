@@ -5,13 +5,13 @@ namespace EntityFramework.models;
 
 public class Task
 {
-    [Key]
+    //[Key]
     public Guid TaskId { get; set; }
-    [ForeignKey("CategoryId")]
+    // [ForeignKey("CategoryId")]
     public Guid CategoryId { get; set; }
 
-    [Required]
-    [MaxLength(150)]
+    // [Required]
+    // [MaxLength(150)]
     public string Title { get; set; }
     public string Description { get; set; }
     public Priority TaskPriority { get; set; }
@@ -19,7 +19,6 @@ public class Task
 
     public virtual Category Category { get; set; }
 
-    [NotMapped]
     public string Resume { get; set; }
 }
 
