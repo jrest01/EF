@@ -2,8 +2,9 @@ using EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
+//ProjectContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
+var builder = WebApplication.CreateBuilder(args);
 //Creates a DB InMemory to validate the operation
 //builder.Services.AddDbContext<ProjectContext>(p => p.UseInMemoryDatabase("TasksDB"));
 
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<ProjectContext>(options => options.UseNpgsql(
     Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
+
 
 app.MapGet("/", () => "Hello World!");
 
