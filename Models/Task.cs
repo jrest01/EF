@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace EntityFramework.models;
 
@@ -20,6 +21,7 @@ public class Task
 
     public virtual Category Category { get; set; }
 
+    [JsonIgnore]
     public string Resume { get; set; }
 }
 
